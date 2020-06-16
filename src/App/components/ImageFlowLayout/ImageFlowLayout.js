@@ -5,7 +5,11 @@ import styles from './ImageFlowLayout.module.css';
 const ImageFlowLayout = (props) => (
   <div className={styles.ImageFlowLayout} data-testid="ImageFlowLayout">
     <div className={styles.flowContainer} >
-      {props.images.map((e,i)=><img alt=""  src={e.url} onClick={props.onClick} />)}
+      {props.images.map((e,i)=><img alt=""  src={e.url} onClick={
+        ()=>{
+        return props.onClick(e);
+        } 
+        }/>)}
     </div>
   </div>
 );
