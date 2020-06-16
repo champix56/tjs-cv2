@@ -39,8 +39,8 @@ class MemeForm extends Component {
         }}></ImageFlowLayout>
         <h3>Ajouter un text</h3>
         <MemeContentTextEditor onAdd={
-          text=>{
-            this.setState({meme:{...this.state.meme,text:[...this.state.meme.texts,text]}})
+          (text)=>{
+            this.setState({meme:{...this.state.meme,texts:[...this.state.meme.texts,text]}});
           }
         }></MemeContentTextEditor>
         {JSON.stringify(this.state)}
