@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './MemeContentTextEditor.module.css';
 import InputText from '../InputText/InputText';
 import Button from '../Button/Button'
+
 class MemeContentTextEditor extends React.Component {
   constructor(props){
     super(props);
@@ -25,7 +26,6 @@ class MemeContentTextEditor extends React.Component {
           // evt.preventDefault();
           evt.stopPropagation();
           return this.props.onAdd(this.state)}} label="Add"/>
-          
       </div>
     );
   }

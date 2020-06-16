@@ -4,6 +4,7 @@ import styles from './MemeForm.module.css';
 import ImageFlowLayout from '../ImageFlowLayout/ImageFlowLayout';
 import InputText from '../InputText/InputText';
 import MemeContentTextEditor from '../MemeContentTextEditor/MemeContentTextEditor';
+import MemeTextsList from '../MemeTextsList/MemeTextsList';
 const initialState = {
   meme: { image: {}, titre: '', texts: [] },
   images: []
@@ -38,6 +39,8 @@ class MemeForm extends Component {
 
         }}></ImageFlowLayout>
         <h3>Ajouter un text</h3>
+        <MemeTextsList texts={this.state.meme.texts}></MemeTextsList>
+
         <MemeContentTextEditor onAdd={
           (text)=>{
             this.setState({meme:{...this.state.meme,texts:[...this.state.meme.texts,text]}});
