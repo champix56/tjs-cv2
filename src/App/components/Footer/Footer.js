@@ -4,7 +4,7 @@ import styles from './Footer.module.css';
 
 const Footer = () => (
   <div className={styles.Footer} data-testid="Footer">
-    Footer Component
+    React is cool With Orsys &copy;2020
   </div>
 );
 
