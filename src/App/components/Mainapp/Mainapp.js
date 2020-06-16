@@ -2,13 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Mainapp.module.css';
 import MemeForm from '../MemeForm/MemeForm';
+import MemeViewer from '../MemeViewer/MemeViewer';
 
-const Mainapp = () => (
-  <div className={styles.Mainapp} data-testid="Mainapp">
-    <MemeForm></MemeForm>
-  </div>
-);
-
+class Mainapp extends React.Component {
+  constructor() {
+    super();
+    this.state = { currentMeme: {} }
+  }
+  render() {
+    return (
+      <div className={styles.Mainapp} data-testid="Mainapp">
+        <MemeViewer meme={this.state.currentMeme}></MemeViewer>
+        <MemeForm onChange={(meme) => this.setState({ currentMeme: meme })} />
+      </div>
+    );
+  }
+}
 Mainapp.propTypes = {};
 
 Mainapp.defaultProps = {};
