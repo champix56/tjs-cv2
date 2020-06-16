@@ -1,0 +1,12 @@
+.ImageFlowLayout {
+    width:100%;
+    overflow-x: auto;
+}
+.flowContainer{
+    width:max-content;
+}
+.flowContainer>img{
+    height: 100px;
+    max-width: 300px;
+    size:auto;
+}
