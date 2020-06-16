@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './Banner.module.css';
 import logo from '../../../logo.svg';
 const Banner = () => (
@@ -8,9 +7,5 @@ const Banner = () => (
             MEME <span className={styles.orange}>.editor</span>
   </div>
 );
-
-Banner.propTypes = {};
-
-Banner.defaultProps = {};
 
 export default Banner;
