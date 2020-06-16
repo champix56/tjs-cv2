@@ -1,9 +1,10 @@
 .Navlink {
     margin: 0;
     display: inline;
-    padding: 2px 8px;
+    padding: 8px 12px;
     text-align: center;
-    border-right: 1px solid WHITE;
+    /* border-right: 1px solid WHITE; */
+    
 
 }
 .Navlink a{
@@ -13,4 +14,5 @@
 .Navlink:hover{
     background-color: tomato;
     color: white;
+    box-shadow: 5px 5px 8px grey;
 }
