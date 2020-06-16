@@ -1,1 +1,8 @@
-.Navbar {}
+.Navbar{ 
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: left;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+ }

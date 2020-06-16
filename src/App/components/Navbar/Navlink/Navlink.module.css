@@ -1,0 +1,16 @@
+.Navlink {
+    margin: 0;
+    display: inline;
+    padding: 2px 8px;
+    text-align: center;
+    border-right: 1px solid WHITE;
+
+}
+.Navlink a{
+    color: white;
+    text-decoration: none;
+}
+.Navlink:hover{
+    background-color: tomato;
+    color: white;
+}
