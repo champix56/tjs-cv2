@@ -1,0 +1,65 @@
+{
+	"images": [
+		{
+			"id": 1,
+			"url": "img/plonge.jpg"
+		},
+		{
+			"id": 2,
+			"url": "img/cri.jpg"
+		},
+		{
+			"id": 3,
+			"url": "img/futurama1.jpg"
+		},
+		{
+			"id": 4,
+			"url": "img/fry1.jpg"
+		},
+		{
+			"id": 5,
+			"url": "img/farnswoth.jpg"
+		},
+		{
+			"id": 6,
+			"url": "img/trololo.jpg"
+		},
+		{
+			"id": 7,
+			"url": "img/cri.jpg"
+		},
+		{
+			"id": 8,
+			"url": "img/seigneur.jpg"
+		},
+		{
+			"id": 9,
+			"url": "img/kid1.jpg"
+		},
+		{
+			"id": 10,
+			"url": "img/dog2.jpg"
+		},
+		{
+			"id": 11,
+			"url": "img/dog1.jpg"
+		},
+		{
+			"id": 12,
+			"url": "img/Beethoven.jpg"
+		}
+	],
+	"memes": [
+		{
+			"id": 1,
+			"image_id": 1,
+			"text": [
+				{
+					"x": 0,
+					"y": 0,
+					"value": "dev react"
+				}
+			]
+		}
+	]
+}
