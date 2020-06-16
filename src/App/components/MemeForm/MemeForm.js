@@ -1,48 +1,54 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from './MemeForm.module.css';
 import ImageFlowLayout from '../ImageFlowLayout/ImageFlowLayout';
 import InputText from '../InputText/InputText';
-const initialState={
-  meme:{image:{},titre:'',texts:[]},
-  images:[]
+import MemeContentTextEditor from '../MemeContentTextEditor/MemeContentTextEditor';
+const initialState = {
+  meme: { image: {}, titre: '', texts: [] },
+  images: []
 };
 class MemeForm extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state=initialState;
+    this.state = initialState;
   }
-  componentDidMount=()=>{
-    fetch('http://localhost:780/images').then((responseStream=>responseStream.json())).then((objetjson)=>{
-      this.setState({images:objetjson});
-    console.log(objetjson);
-  
-  })
+  componentDidMount = () => {
+    fetch('http://localhost:780/images').then((responseStream => responseStream.json())).then((objetjson) => {
+      this.setState({ images: objetjson });
+      console.log(objetjson);
+    })
   }
   render() {
     return (
       <form className={styles.MemeForm} data-testid="MemeForm">
-      <h3>titre</h3>
-      <InputText changementSubi={
-        (evt)=>{
+        <h3>titre</h3>
+        <InputText changementSubi={
+          (evt) => {
             this.setState({
-              meme:{...this.state.meme,titre:evt.currentTarget.value}
-              })
+              meme: { ...this.state.meme, titre: evt.currentTarget.value }
+            })
           }
-        } 
-      value={this.state.meme.titre}/>
-      <h3>Selection images : </h3>
-      <ImageFlowLayout images={this.state.images} onClick={(image)=>{
+        }
+          value={this.state.meme.titre} />
+        <h3>Selection images : </h3>
+        <ImageFlowLayout images={this.state.images} onClick={(image) => {
 
-      this.setState({meme:{...this.state.meme,image:image}})
-      
-      }}></ImageFlowLayout>
-      {JSON.stringify(this.state)}
-  </form>
+          this.setState({ meme: { ...this.state.meme, image: image } })
+
+        }}></ImageFlowLayout>
+        <h3>Ajouter un text</h3>
+        <MemeContentTextEditor onAdd={
+          text=>{
+            this.setState({meme:{...this.state.meme,text:[...this.state.meme.texts,text]}})
+          }
+        }></MemeContentTextEditor>
+        {JSON.stringify(this.state)}
+      </form>
     );
   }
 }
- 
+
 MemeForm.propTypes = {};
 
 MemeForm.defaultProps = {};
