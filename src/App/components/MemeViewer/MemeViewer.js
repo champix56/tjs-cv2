@@ -18,12 +18,13 @@ const MemeViewer = (props) => {
 
 MemeViewer.propTypes = { meme: PropTypes.object };
 
-MemeViewer.defaultProps = { meme: 
-    { 
-      titre: 'titre meme', 
-      image: { id: 1, url: 'img/seigneur.jpg' }, 
-      texts: [{ x: 15, y: 35, value: 'React is' }, { x: 65, y: 70, value: 'cool' }] 
-    } 
+MemeViewer.defaultProps = {
+  //  meme: 
+  //   { 
+  //     titre: 'titre meme', 
+  //     image: { id: 1, url: 'img/seigneur.jpg' }, 
+  //     texts: [{ x: 15, y: 35, value: 'React is' }, { x: 65, y: 70, value: 'cool' }] 
+  //   } 
 };
 
 export default MemeViewer;
