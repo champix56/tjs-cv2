@@ -21,32 +21,36 @@ class MemeForm extends Component {
     })
   }
   render() {
+    console.log(JSON.stringify(this.state));
     return (
       <form className={styles.MemeForm} data-testid="MemeForm">
         <h3>titre</h3>
         <InputText changementSubi={
           (evt) => {
-            this.setState({
+            const memeState={
               meme: { ...this.state.meme, titre: evt.currentTarget.value }
-            })
+            }
+            this.props.onChange(memeState.meme);
+            this.setState(memeState);
           }
         }
           value={this.state.meme.titre} />
         <h3>Selection images : </h3>
         <ImageFlowLayout images={this.state.images} onClick={(image) => {
-
-          this.setState({ meme: { ...this.state.meme, image: image } })
-
+          var memeState={ meme: { ...this.state.meme, image: image } };
+          this.props.onChange(memeState.meme);
+          this.setState(memeState);
         }}></ImageFlowLayout>
         <h3>Ajouter un text</h3>
         <MemeTextsList texts={this.state.meme.texts}></MemeTextsList>
 
         <MemeContentTextEditor onAdd={
           (text)=>{
-            this.setState({meme:{...this.state.meme,texts:[...this.state.meme.texts,text]}});
+            const memeState={meme:{...this.state.meme,texts:[...this.state.meme.texts,text]}}
+            this.props.onChange(memeState.meme);
+            this.setState(memeState);
           }
         }></MemeContentTextEditor>
-        {JSON.stringify(this.state)}
       </form>
     );
   }

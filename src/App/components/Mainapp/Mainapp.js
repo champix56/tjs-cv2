@@ -11,10 +11,14 @@ class Mainapp extends React.Component {
   }
   render() {
     return (
-      <div className={styles.Mainapp} data-testid="Mainapp">
+      <><div className={styles.Mainapp} data-testid="Mainapp">
         <MemeViewer meme={this.state.currentMeme}></MemeViewer>
-        <MemeForm onChange={(meme) => this.setState({ currentMeme: meme })} />
+        <MemeForm onChange={(meme) => {
+          return this.setState({currentMeme:meme})}
+          } />
       </div>
+      {JSON.stringify(this.state)}
+      </>
     );
   }
 }
