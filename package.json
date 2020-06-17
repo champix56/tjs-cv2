@@ -14,7 +14,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "json":"json-server -p 780 db/db.json",
+    "startAll":"npm run json|npm start"
   },
   "eslintConfig": {
     "extends": "react-app"
