@@ -6,8 +6,8 @@ import MemeViewer from '../MemeViewer/MemeViewer';
 
 const Mainapp = () => (
   <div className={styles.Mainapp} data-testid="Mainapp">
-    <MemeViewer></MemeViewer>
-    <MemeForm></MemeForm>
+    <MemeViewer ></MemeViewer>
+    <MemeForm ></MemeForm>
   </div>
 );
 
