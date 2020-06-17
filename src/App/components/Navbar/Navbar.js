@@ -5,8 +5,9 @@ import Navlink from './Navlink/Navlink';
 
 const Navbar = () => (
   <ul className={styles.Navbar} data-testid="Navbar">
-      <Navlink href="">Lien 1</Navlink>
-      <Navlink href=""><img src="https://www.meme-arsenal.com/memes/435a7b1a4c15acdf29ce6a72b63cdd30.jpg" />lien2</Navlink>
+      <Navlink href="/memes">Lien 1</Navlink>
+      <Navlink href="/memes/1">lien2</Navlink>
+      
     </ul>
 );
 
