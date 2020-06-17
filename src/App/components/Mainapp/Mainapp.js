@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './Mainapp.module.css';
 import MemeForm from '../MemeForm/MemeForm';
 import MemeViewer from '../MemeViewer/MemeViewer';
+import MemesViewer from '../MemesViewer/MemesViewer';
 
 const initialSate={currentMeme: { 
   titre: 'titre meme', 
@@ -24,6 +25,7 @@ class Mainapp extends React.Component {
         <MemeViewer meme={this.state.currentMeme}></MemeViewer>
         <MemeForm onChange={this.changeCurrentMeme} ></MemeForm>
       </div>
+      <MemesViewer/>
       {JSON.stringify(this.state)}
       </>
     );

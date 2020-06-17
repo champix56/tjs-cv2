@@ -51,17 +51,6 @@
   ],
   "memes": [
     {
-      "id": 1,
-      "image_id": 1,
-      "text": [
-        {
-          "x": 0,
-          "y": 0,
-          "value": "dev react"
-        }
-      ]
-    },
-    {
       "image": {
         "id": 3,
         "url": "img/futurama1.jpg"
@@ -240,6 +229,24 @@
         }
       ],
       "id": 13
+    },
+    {
+      "image": {},
+      "titre": "",
+      "texts": [],
+      "id": 14
+    },
+    {
+      "image": {},
+      "titre": "",
+      "texts": [],
+      "id": 15
+    },
+    {
+      "image": {},
+      "titre": "",
+      "texts": [],
+      "id": 16
     }
   ]
 }
