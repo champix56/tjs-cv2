@@ -1,1 +1,10 @@
 .Mainapp {}
+.Mainapp > * {
+    /* border: 1px solid black;; */
+    display: inline-block;
+    /* width: calc(50vw - 75px); */
+    width:48%;
+    vertical-align: top;
+    margin-left: 25px;
+
+}
