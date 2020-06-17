@@ -9,7 +9,6 @@ const MemeViewer = (props) => {
         <image xlinkHref={props.meme.image.url} x={0} y="0" height="100" width="100" />
         {props.meme.texts.map((e)=>{
           return <text x={e.x} y={e.y} style={{fill:'white',fontSize:'15', fontWeight:'900'}} >{e.value}</text>
-
         })}
       </svg>
     </div>

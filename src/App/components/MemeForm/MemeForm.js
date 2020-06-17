@@ -57,7 +57,7 @@ class MemeForm extends Component {
         }></MemeContentTextEditor>
         <hr/>
         <Button label="Enregistrer meme" lorsDuClick={this.saveMeme}/>
-        {JSON.stringify(this.state)}
+        {/* {JSON.stringify(this.state)} */}
       </form>
     );
   }
