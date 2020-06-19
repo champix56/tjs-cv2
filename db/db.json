@@ -2,58 +2,58 @@
   "images": [
     {
       "id": 1,
-      "url": "img/plonge.jpg"
+      "url": "/img/plonge.jpg"
     },
     {
       "id": 2,
-      "url": "img/cri.jpg"
+      "url": "/img/cri.jpg"
     },
     {
       "id": 3,
-      "url": "img/futurama1.jpg"
+      "url": "/img/futurama1.jpg"
     },
     {
       "id": 4,
-      "url": "img/fry1.jpg"
+      "url": "/img/fry1.jpg"
     },
     {
       "id": 5,
-      "url": "img/farnswoth.jpg"
+      "url": "/img/farnswoth.jpg"
     },
     {
       "id": 6,
-      "url": "img/trololo.jpg"
+      "url": "/img/trololo.jpg"
     },
     {
       "id": 7,
-      "url": "img/cri.jpg"
+      "url": "/img/cri.jpg"
     },
     {
       "id": 8,
-      "url": "img/seigneur.jpg"
+      "url": "/img/seigneur.jpg"
     },
     {
       "id": 9,
-      "url": "img/kid1.jpg"
+      "url": "/img/kid1.jpg"
     },
     {
       "id": 10,
-      "url": "img/dog2.jpg"
+      "url": "/img/dog2.jpg"
     },
     {
       "id": 11,
-      "url": "img/dog1.jpg"
+      "url": "/img/dog1.jpg"
     },
     {
       "id": 12,
-      "url": "img/Beethoven.jpg"
+      "url": "/img/Beethoven.jpg"
     }
   ],
   "memes": [
     {
       "image": {
         "id": 3,
-        "url": "img/futurama1.jpg"
+        "url": "/img/futurama1.jpg"
       },
       "titre": "",
       "texts": [
@@ -73,7 +73,7 @@
     {
       "image": {
         "id": 3,
-        "url": "img/futurama1.jpg"
+        "url": "/img/futurama1.jpg"
       },
       "titre": "",
       "texts": [
@@ -89,6 +89,27 @@
         }
       ],
       "id": 2
+    },
+    {
+      "image": {
+        "id": 3,
+        "url": "/img/seigneur.jpg"
+      },
+      "titre": "",
+      "texts": [
+        {
+          "value": "r(tèy_uio",
+          "x": 10,
+          "y": 10
+        }
+      ],
+      "id": 3
+    },
+    {
+      "image": {},
+      "titre": "",
+      "texts": [],
+      "id": 4
     }
   ]
 }
