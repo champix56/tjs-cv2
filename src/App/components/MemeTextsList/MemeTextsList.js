@@ -5,17 +5,20 @@ import styles from './MemeTextsList.module.css';
 const MemeTextsList = (props) => (
   <div className={styles.MemeTextsList} data-testid="MemeTextsList">
     <table>
+    <thead>
       <tr>
         <th>X</th>
         <th>Y</th>
         <th>Value</th>
       </tr>
-      {props.texts.map((e)=><tr>
+      </thead>
+      <tbody>
+      {props.texts.map((e,i)=><tr key={`text-${i}`}>
         <td>{e.x}</td>
         <td>{e.y}</td>
         <td>{e.value}</td>
       </tr>)}
-     
+     </tbody>
     </table>
   </div>
 );

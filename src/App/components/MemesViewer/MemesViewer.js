@@ -19,9 +19,11 @@ class MemesViewer extends React.Component {
     console.log(this.state)
     return (
       <div className={styles.MemesViewer} data-testid="MemesViewer">
-        {this.state.memes.map(e=>{
+        {this.state.memes.map((e,i)=>{
           console.log(e);
-          return <MemeViewer meme={e}/>})}
+          return <MemeViewer meme={e}
+            key={`meme-${i}`}
+          />})}
       </div>
     );
   }

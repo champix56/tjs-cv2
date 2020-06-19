@@ -9,7 +9,9 @@ const ImageFlowLayout = (props) => (
         ()=>{
         return props.onClick(e);
         } 
-        }/>)}
+        }
+          key={`img-${i}`}
+        />)}
     </div>
   </div>
 );
