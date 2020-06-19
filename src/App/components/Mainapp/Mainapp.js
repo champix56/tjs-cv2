@@ -6,7 +6,8 @@ import MemeViewer from '../MemeViewer/MemeViewer';
 import MemesViewer from '../MemesViewer/MemesViewer';
 import {
   Route,
-  Switch
+  Switch,
+  useParams
 } from 'react-router-dom'
 
 const initialSate = {
@@ -25,6 +26,8 @@ class Mainapp extends React.Component {
     this.setState({ currentMeme: meme });
   }
   render() {
+    // let params=useParams();
+    // console.log(params);
     return (
       <>
         <Switch>
@@ -35,17 +38,23 @@ class Mainapp extends React.Component {
             </div>
             <MemesViewer />
           </Route>
-
+          <Route path="/memes/:id">
+            <RouteParamWrapper/>
+          </Route>
           <Route path="/memes">
             <MemesViewer />
           </Route>
         </Switch>
-
       </>
     );
   }
 }
 
+const RouteParamWrapper=()=>{
+  let {id}=useParams();
+  console.log(useParams());
+  return    <MemeViewer memeId={id} />
+}
 Mainapp.propTypes = {};
 
 Mainapp.defaultProps = {};
