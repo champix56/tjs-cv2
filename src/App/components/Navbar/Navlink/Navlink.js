@@ -7,7 +7,7 @@ const Navlink = (props) =>{
   console.log(props)
   return (
   <li className={styles.Navlink} data-testid="Navlink">
-  <Link to={props.href}>{props.href}</Link>
+  <Link to={props.href}>{props.children}</Link>
   </li>
 );}
 
