@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import styles from './Mainapp.module.css';
 import MemeForm from '../MemeForm/MemeForm';
 import MemeViewer from '../MemeViewer/MemeViewer';
@@ -9,6 +9,8 @@ import {
   Switch,
   useParams
 } from 'react-router-dom'
+
+import memeStore from '../../stores/MemeRedux';
 
 const initialSate = {
   currentMeme: {
@@ -21,6 +23,7 @@ class Mainapp extends React.Component {
   constructor(props) {
     super(props);
     this.state = initialSate;
+    memeStore.subscribe(r=>console.log(r));
   }
   changeCurrentMeme = (meme) => {
     this.setState({ currentMeme: meme });
@@ -33,8 +36,8 @@ class Mainapp extends React.Component {
         <Switch>
           <Route exact path="/">
             <div className={styles.Mainapp} data-testid="Mainapp">
-              <MemeViewer meme={this.state.currentMeme}></MemeViewer>
-              <MemeForm onChange={this.changeCurrentMeme} ></MemeForm>
+              <MemeViewer></MemeViewer>
+              <MemeForm></MemeForm>
             </div>
             <MemesViewer />
           </Route>
