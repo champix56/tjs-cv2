@@ -6,6 +6,8 @@ import InputText from '../InputText/InputText';
 import MemeContentTextEditor from '../MemeContentTextEditor/MemeContentTextEditor';
 import MemeTextsList from '../MemeTextsList/MemeTextsList';
 import Button from '../Button/Button';
+import memeStore from '../../stores/MemeRedux';
+import ActionType from '../../stores/EnumActionType';
 const initialState = {
   meme: { image: {}, titre: '', texts: [] },
   images: []
@@ -14,6 +16,7 @@ class MemeForm extends Component {
   constructor(props) {
     super(props);
     this.state = initialState;
+    console.log(this.props.store);
   }
   componentDidMount = () => {
     fetch('http://localhost:780/images').then((responseStream => responseStream.json())).then((objetjson) => {
@@ -22,8 +25,11 @@ class MemeForm extends Component {
     })
   }
   formChanged=(meme)=>{
-    this.props.onChange(meme);
+    //on genere un event qui doit declancher une action sur le store 
+    //on parle de dispatch sur le store suivant un type et une valeur (si besoin)
+    memeStore.dispatch({type:ActionType.UPDATE_CURRENT,value:meme})
   }
+  
   render() {
     return (
       <form className={styles.MemeForm} data-testid="MemeForm">
@@ -62,24 +68,8 @@ class MemeForm extends Component {
     );
   }
   saveMeme=()=>{
-  //   const configFetch={method:this.state.meme.id?'PUT':'POST',headers:{
-  //     "Content-Type":"application/json"
-  //   },
-  //   body:JSON.stringify(this.state.meme)
-  // }
-  //   const url ='http://localhost:780/meme'+this.state.meme.id?'/'+this.state.meme.id:'';
-  //   fetch(url,configFetch).then();
-  // }
-    let xhr=new XMLHttpRequest();
-    const url ='http://localhost:780/memes'+(this.state.meme.id?'/'+this.state.meme.id:'');
-    xhr.open(this.state.meme.id?'PUT':'POST',url);
-    xhr.setRequestHeader('Content-Type','application/json');
-    xhr.onreadystatechange=(evt)=>{
-      if(xhr.readyState<3)return;
-      console.log(evt.currentTarget)
-
-    }
-  xhr.send(JSON.stringify(this.state.meme));
+  //on vas ici s'appuyer sur le store pour gerer les appeles en fonction d'un type ADD_MEME
+  memeStore.dispatch({type:ActionType.ADD_MEME,value:memeStore.getState().meme});
   }
 }
 
