@@ -1,24 +1,31 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './MemeViewer.module.css';
-
+import memeStore from '../../stores/MemeRedux';
 class MemeViewer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { meme: props.meme ,id:props.memeId};
+    //verification qu'une props definissant un ID specifique  afficher
+    //permet de preserver la fonction d'edition et la fonction d'affichage d'un meme qu'i n'est pas le meme courrant en edition
+    if (this.props.memeId) {
+      this.state = { meme: memeStore.getState().memes.find(a => a.id === this.props.memeId) };
+    }
+    else {
+      //sinon edition du meme
+      //on place dans l'etat du composnt le meme courrant 
+      //qui est stockédans l'etat du store
+      this.state = { meme: memeStore.getState().meme };
+      //on adhere aux changements du store car nous somme 
+      //en train de faire la partie edition (cf else)
+      memeStore.subscribe(() => {
+        //il y a eu un changement 
+        //je met à jour mon state de composant avec l'etat actuelle
+        //du store avec getState()
+        this.setState({ meme: memeStore.getState().meme })
+      })
+    }
   }
-  componentDidMount(){
-    if(this.props.memeId)
-    fetch(`http://localhost:780/memes/${this.props.memeId}`)
-      .then(r=>r.json()).then(r=>{
-          this.setState({meme:r})
-        return r;
-      });
-  }
-  componentWillReceiveProps() {
-   if(this.props.meme)
-    this.setState({ meme: this.props.meme })
-  }   
+
   render() {
     return (
       <div className={styles.MemeViewer} data-testid="MemeViewer">
