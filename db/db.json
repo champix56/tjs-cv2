@@ -110,6 +110,51 @@
       "titre": "",
       "texts": [],
       "id": 4
+    },
+    {
+      "image": {
+        "id": 2,
+        "url": "/img/cri.jpg"
+      },
+      "titre": "",
+      "texts": [
+        {
+          "value": "yes",
+          "x": 10,
+          "y": "20"
+        }
+      ],
+      "id": 5
+    },
+    {
+      "image": {
+        "id": 11,
+        "url": "/img/dog1.jpg"
+      },
+      "titre": "",
+      "texts": [
+        {
+          "value": "yes",
+          "x": 10,
+          "y": 10
+        }
+      ],
+      "id": 6
+    },
+    {
+      "image": {
+        "id": 2,
+        "url": "/img/cri.jpg"
+      },
+      "titre": "",
+      "texts": [
+        {
+          "value": "esq",
+          "x": 10,
+          "y": 10
+        }
+      ],
+      "id": 7
     }
   ]
 }
